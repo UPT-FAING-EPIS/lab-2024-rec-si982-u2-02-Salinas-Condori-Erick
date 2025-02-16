@@ -2,7 +2,7 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=18136477)
 # SESION DE LABORATORIO N° 03: Construyendo una aplicación Web utilizando Blazor Server
 
-### Nombre: 
+### Nombre: Erick Javier Salinas Condori - Codigo: 2020069046
 
 ## OBJETIVOS
   * Desarrolla una aplicación web utilizando Blazor Server.
@@ -57,6 +57,9 @@
     
 ## DESARROLLO
 1. Iniciar la aplicación Powershell o Windows Terminal en modo administrador.
+
+![image](https://github.com/user-attachments/assets/294d7a98-dd0e-4bb3-9adf-098a461dce15)
+
 2. En el terminal, ubicarse en un ruta que no sea del sistema y ejecutar los siguientes comandos.
 ```Bash
 md src
@@ -73,6 +76,30 @@ dotnet add package Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdap
 dotnet tool install -g dotnet-ef --version 8.0.0
 dotnet tool install -g dotnet-aspnet-codegenerator --version 8.0.0
 ```
+
+![image](https://github.com/user-attachments/assets/40306e4a-2c6a-4f97-972b-05b4afd59a26)
+
+![image](https://github.com/user-attachments/assets/e918078d-c2ec-46c6-b50b-3aac8c9400ce)
+
+![image](https://github.com/user-attachments/assets/0d1ea317-099d-45c4-b443-60b4f069e5d2)
+
+![image](https://github.com/user-attachments/assets/fe252d49-6d18-49f9-aa0e-6e06bf62eb50)
+
+![image](https://github.com/user-attachments/assets/b18a983d-c0a9-49e3-9e09-6d81dcfc1b83)
+
+![image](https://github.com/user-attachments/assets/6e5f066e-8e4c-497a-8ea0-1bdb8ee5849e)
+
+![image](https://github.com/user-attachments/assets/a010b014-e344-46a3-9330-7d6cae99f694)
+
+![image](https://github.com/user-attachments/assets/6293917a-75ab-409a-850b-bd1508e67f42)
+
+![image](https://github.com/user-attachments/assets/a998511a-ce2a-4fd4-b9cc-ba051e8ed935)
+
+![image](https://github.com/user-attachments/assets/58ec5f62-ae55-4cc7-b705-3ca561fa0306)
+
+![image](https://github.com/user-attachments/assets/a2151f10-c43a-4ccb-baa0-5cefebd3b4f7)
+
+![image](https://github.com/user-attachments/assets/d0fb0624-5cb5-4b23-aaeb-ac904a81a81a)
 
 3. Abrir Visual Studio Code y elegir la carpeta del proyecto, dentro del proyecto Financiera.WebApp, crear la carpeta Modelos, y dentro de esta crear los siguientes archivos con lo siguientes contenidos:
 > Cliente.cs
@@ -313,6 +340,16 @@ public class TipoMovimiento
     }
 }
 ```
+
+![image](https://github.com/user-attachments/assets/87d47a28-3aa8-4dfa-83c6-5f00dd71e784)
+
+![image](https://github.com/user-attachments/assets/20dacc0a-286c-4ca4-b0b1-5ff9e374f7be)
+
+![image](https://github.com/user-attachments/assets/7e546b9e-633a-4679-8a6c-bacdb8a68b4e)
+
+![image](https://github.com/user-attachments/assets/9dc20356-9464-4d03-9800-16d02d0f2bb0)
+
+
 4. En Visual Studio Code, dentro del proyecto Financiera.WebApp, crear la carpeta Mapeos, y dentro de esta crear los siguientes archivos con lo siguientes contenidos:
 > ClienteConfiguracion.cs
 ```CSharp
@@ -388,6 +425,15 @@ public class TipoMovimientoConfiguracion : IEntityTypeConfiguration<TipoMovimien
     }
 }
 ```
+
+![image](https://github.com/user-attachments/assets/299c19a0-8c40-4b02-a624-01b9d5fd4166)
+
+![image](https://github.com/user-attachments/assets/8e1411b4-9845-458a-8a32-e5da6bb37d3d)
+
+![image](https://github.com/user-attachments/assets/e3ca0282-e258-4e45-8594-3a6dea2a43a5)
+
+![image](https://github.com/user-attachments/assets/c4b8d919-193d-4af6-8533-052a9f898886)
+
 7. En Visual Studio Code, dentro del proyecto Financiera.WebApp, en la raiz crear el siguiente archivo y contenido:
 > FinancieraContexto.cs
 ```CSharp
@@ -437,6 +483,8 @@ public class FinancieraContexto : DbContext
 }
 ```
 
+![image](https://github.com/user-attachments/assets/7f6e7f4f-403f-44fa-a115-18d5039656be)
+
 8. En el terminal, ejecutar el siguiente comando para iniciar una base de datos MariaDB:
 ```Bash
 md site && cs site
@@ -445,15 +493,23 @@ eb create dev-env -s -sr LabRole -ip LabInstanceProfile -db
 ```
 > Nota: para la base de datos se utilizar las credenciales usuario: sqladmin y password: upt.2025
 
+![image](https://github.com/user-attachments/assets/34a0a776-40a0-4915-92a6-da2de9a86c89)
+
+![image](https://github.com/user-attachments/assets/116e8411-b101-49f0-9217-1d65eaf1de5e)
+
 9. En el terminal, verificar las instancias de base de datos creadas.
 ```Bash
 aws rds describe-db-instances
 ```
 
+![image](https://github.com/user-attachments/assets/d262ffe3-387a-4dfe-8793-c835d7120dfa)
+
 10. En el terminal, ejecutar el siguiente comando para añadir el puerto de entrada a la base de datos (1521) el cual servira para la comunicación, reemplazar el valor de group-id por el valor de VpcSecurityGroupId obtenido en el paso anterior
 ```Bash
 aws ec2 authorize-security-group-ingress --group-id sg-XXXXXXXXXXXXXX --protocol tcp --port 1521 --cidr 0.0.0.0/0
 ```
+
+![image](https://github.com/user-attachments/assets/a7dcaf3b-c1b8-4f87-a9cd-08c92ec23929)
 
 11. En Visual Studio Code, editar el archivo appsetting.json, que se encuentra en el proyecto Financiera.WebApp, y adicionar lo siguiente despues de la apertura de la primera llave.
 ```JSON
@@ -462,11 +518,17 @@ aws ec2 authorize-security-group-ingress --group-id sg-XXXXXXXXXXXXXX --protocol
   },
 ```
 > Nota: Reemplazar las XXXXXXXXXX con el nombre del servidor de base de datos generado previamente.
+
+![image](https://github.com/user-attachments/assets/6d775599-62ee-41ae-8258-a18b680d0b4a)
+
 12. En Visual Studio Code, en el proyecto Financiera.WebApp modificar el archivo program.cs, al inicio del archivo agregar
 ```C#
 using Financiera.WebApp;
 using Microsoft.EntityFrameworkCore;
 ```
+
+![image](https://github.com/user-attachments/assets/a3cdbec9-fa4e-4d34-bf30-f4e7fd2fd1f5)
+
 13. En Visual Studio Code, en el proyecto Financiera.WebApp modificar el archivo program.cs, debajo de la linea que indica `// Add services to the container`.
 ```C#
 string connectionString = builder.Configuration.GetConnectionString("FinancieraBD")??"";
@@ -476,18 +538,27 @@ builder.Services.AddDbContext<FinancieraContexto>(
 builder.Services.AddQuickGridEntityFrameworkAdapter();
 ```
 
+![image](https://github.com/user-attachments/assets/925fef68-553b-4dbd-bd40-b300a0e2ba9a)
+
 14. En el terminal, esperar un minuto que inicie correctamente el contenedor y ejecutar el siguiente comando para efectuar la migración:
 ```Bash
 cd Financiera.WebApp
 dotnet ef migrations add CrearFinancieraBD
 dotnet ef database update
 ```
+
+![image](https://github.com/user-attachments/assets/f3086a4e-58f5-4e8e-ab4b-530145cbf073)
+
+![image](https://github.com/user-attachments/assets/947d7171-060f-4e85-8ee6-cbcbdfcc1bc2)
+
 15. En el terminal, proceder a generar la interfaz del cliente con el siguiente comando:
 ```Bash
 cd Financiera.WebApp
 dotnet aspnet-codegenerator blazor CRUD -m Cliente -dc FinancieraContexto
 cd ..
 ```
+
+![image](https://github.com/user-attachments/assets/b8a9a39c-0fa5-4ecd-87a7-6f11d9d2ec96)
 
 16. En Visual Studio Code, en el proyecto Financiera.WebApp en la ruta Components\Layout modificar el archivo NavMenu.razor
 > dice
@@ -507,10 +578,16 @@ cd ..
         </div>
 ```
 
+![image](https://github.com/user-attachments/assets/07e74cbf-5135-4e49-a0c1-9795965d7ab9)
+
 17. En el terminal, para revisar la aplicación utilizar el siguiente comando:
 ```
 eb open
 ```
+
+![image](https://github.com/user-attachments/assets/1a7ac87c-201f-4b39-b2e6-91e3be3fb7c1)
+
+![image](https://github.com/user-attachments/assets/b341a3c1-b2bc-4e15-aa22-ef5cbfe710c1)
 
 ---
 ## Actividades Encargadas
