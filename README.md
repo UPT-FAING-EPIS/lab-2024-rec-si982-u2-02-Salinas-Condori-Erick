@@ -558,7 +558,8 @@ dotnet aspnet-codegenerator blazor CRUD -m Cliente -dc FinancieraContexto
 cd ..
 ```
 
-![image](https://github.com/user-attachments/assets/b8a9a39c-0fa5-4ecd-87a7-6f11d9d2ec96)
+![image](https://github.com/user-attachments/assets/7f40b2fc-9c01-48fb-9a6d-3a93fbc56b02)
+
 
 16. En Visual Studio Code, en el proyecto Financiera.WebApp en la ruta Components\Layout modificar el archivo NavMenu.razor
 > dice
