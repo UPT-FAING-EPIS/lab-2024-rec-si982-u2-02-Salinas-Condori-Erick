@@ -2,6 +2,7 @@ using Financiera.WebApp;
 
 using Microsoft.EntityFrameworkCore;
 using Financiera.WebApp.Components;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
